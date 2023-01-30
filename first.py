@@ -18,9 +18,9 @@ with DAG('First_DAG', schedule_interval = None, default_args = default_dag_args)
 
     # At this level we define our task of the DAGs
 
-    task_0 = BashOperator(bash_id = 'bash_task', bash_command = 'echo "command executed from bash operator"')
-    task_1 = BashOperator(bash_id = 'bash_task_move_data', bash_command = 'cp C:\Users\User\Desktop\data_centre\data_lake C:\Users\User\Desktop\data_centre\clean_data')
-    task_2 = BashOperator(task_id = 'bash_task_move_data', bash_command = "")
+    task_0 = BashOperator(task_id = 'bash_task', bash_command = 'echo "command executed from bash operator"')
+    task_1 = BashOperator(task_id = 'bash_move_data', bash_command = 'cp C:\Users\User\Desktop\data_centre\data_lake\dataset_raw.txt C:\Users\User\Desktop\data_centre\clean_data')
+    task_2 = BashOperator(task_id = 'bash_remove_data', bash_command = "rm C:\Users\User\Desktop\data_centre\data_lake\dataset_raw.txt")
 
     # task dependency
 
