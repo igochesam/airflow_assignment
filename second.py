@@ -3,9 +3,11 @@ from datetime import datetime, timedelta
 from airflow.operators.python_operator import PythonOperator
 
 # first we write here our python logic
+# create a dag with one python task only. This function should print the current datetime
 
 def python_first_function():
-    pass
+    current_time = datetime.datetime.now()
+    print('the current time is: ', current_time)
 
 
 # create the DAG which calls the python logic that you have created
